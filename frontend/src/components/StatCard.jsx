@@ -1,14 +1,9 @@
+import "../styles/card.css";
+
 function StatCard({ title, value }) {
   return (
-    <div
-      style={{
-        background: "white",
-        padding: "20px",
-        borderRadius: "10px",
-        width: "220px",
-        boxShadow: "0 0 10px rgba(0,0,0,0.1)"
-      }}
-    >
+    <div className="card">
+
       <h3>{title}</h3>
 
       <h1>{value}</h1>

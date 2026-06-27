@@ -1,100 +1,81 @@
 import { useEffect, useState } from "react";
-
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
+import Layout from "../layouts/Layout";
 import StatCard from "../components/StatCard";
-
 import API from "../services/api";
 
 function Dashboard() {
 
-    const [documents, setDocuments] = useState(0);
-    const [blocks, setBlocks] = useState(0);
-    const [status, setStatus] = useState("Loading...");
+  const [documents, setDocuments] = useState(0);
+  const [blocks, setBlocks] = useState(0);
+  const [status, setStatus] = useState("Loading...");
 
-    useEffect(() => {
+  useEffect(() => {
+    loadDashboard();
+  }, []);
 
-        loadDashboard();
+  const loadDashboard = async () => {
 
-    }, []);
+    try {
 
-    const loadDashboard = async () => {
+      const blockchain = await API.get("/blockchain");
+      setBlocks(blockchain.data.totalBlocks);
 
-        try {
+      const validation = await API.get("/blockchain/validate");
 
-            // Load Blockchain
-            const blockchain = await API.get("/blockchain");
+      setStatus(
+        validation.data.valid
+          ? "Healthy"
+          : "Tampered"
+      );
 
-            setBlocks(blockchain.data.totalBlocks);
+      const docs = await API.get("/documents");
+      setDocuments(docs.data.count);
 
-            // Validate Blockchain
-            const validation = await API.get("/blockchain/validate");
+    } catch (error) {
 
-            setStatus(
-                validation.data.valid
-                    ? "Healthy"
-                    : "Tampered"
-            );
+      console.error(error);
 
-            // Load Documents
-            const docs = await API.get("/documents");
+    }
 
-            setDocuments(docs.data.count);
+  };
 
-        } catch (error) {
+  return (
 
-            console.error(error);
+    <Layout>
 
-        }
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          flexWrap: "wrap"
+        }}
+      >
 
-    };
+        <StatCard
+          title="Documents"
+          value={documents}
+        />
 
-    return (
+        <StatCard
+          title="Blockchain Blocks"
+          value={blocks}
+        />
 
-        <div style={{ display: "flex" }}>
+        <StatCard
+          title="AI Queries"
+          value="Coming Soon"
+        />
 
-            <Sidebar />
+        <StatCard
+          title="Blockchain Status"
+          value={status}
+        />
 
-            <div style={{ flex: 1 }}>
+      </div>
 
-                <Navbar />
+    </Layout>
 
-                <div
-                    style={{
-                        padding: "30px",
-                        display: "flex",
-                        gap: "20px",
-                        flexWrap: "wrap"
-                    }}
-                >
-
-                    <StatCard
-                        title="Documents"
-                        value={documents}
-                    />
-
-                    <StatCard
-                        title="Blockchain Blocks"
-                        value={blocks}
-                    />
-
-                    <StatCard
-                        title="AI Queries"
-                        value="Coming Soon"
-                    />
-
-                    <StatCard
-                        title="Blockchain Status"
-                        value={status}
-                    />
-
-                </div>
-
-            </div>
-
-        </div>
-
-    );
+  );
 
 }
 
