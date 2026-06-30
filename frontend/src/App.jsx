@@ -11,8 +11,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+
       <Route path="/upload" element={<Upload />} />
-      <Route path="/chat" element={<Chat />} />
+      <Route path="/chat/:id" element={<Chat />} />
       <Route path="/documents" element={<Documents />} />
       <Route path="/blockchain" element={<Blockchain />} />
       <Route path="/verify" element={<Verify />} />

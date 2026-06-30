@@ -24,8 +24,9 @@ const uploadDocument = async (req, res) => {
     // Save document in MongoDB
     const savedDocument = await Document.create({
       filename: req.file.originalname,
+      filepath: req.file.path,
       content: pdfData.text,
-      fileHash
+      fileHash,
     });
 
     // Create a block in the blockchain
@@ -62,7 +63,7 @@ const uploadDocument = async (req, res) => {
 const getDocuments = async (req, res) => {
   try {
     const documents = await Document.find()
-      .select("filename uploadedAt");
+      .select("filename filepath fileHash uploadedAt");
 
     res.json({
       success: true,

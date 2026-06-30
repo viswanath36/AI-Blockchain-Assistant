@@ -3,23 +3,28 @@ const mongoose = require("mongoose");
 const documentSchema = new mongoose.Schema({
   filename: {
     type: String,
-    required: true
+    required: true,
+  },
+
+  filepath: {
+    type: String,
+    required: true,
   },
 
   content: {
     type: String,
-    required: true
+    required: true,
   },
 
   fileHash: {
     type: String,
-    required: true
+    required: true,
   },
 
   uploadedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("Document", documentSchema);

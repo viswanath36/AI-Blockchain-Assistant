@@ -1,0 +1,19 @@
+.footer{
+    margin-top:40px;
+
+    padding:25px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:14px;
+
+    border-top:1px solid #e2e8f0;
+}
+
+.footer strong{
+
+    color:#2563eb;
+
+}

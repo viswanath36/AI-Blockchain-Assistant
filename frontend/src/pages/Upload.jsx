@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { toast } from "react-toastify";
 import Layout from "../layouts/Layout";
 import API from "../services/api";
 
 function Upload() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fileInputRef = useRef(null);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -11,33 +15,41 @@ function Upload() {
 
   const handleUpload = async () => {
     if (!selectedFile) {
-      alert("Please select a PDF.");
+      toast.warning("Please select a PDF document.");
       return;
     }
 
     const formData = new FormData();
-    formData.append("file", selectedFile);
+    formData.append("document", selectedFile);
 
     try {
+      setLoading(true);
+
       const response = await API.post("/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      alert(response.data.message);
+      toast.success(
+        response.data.message || "Document uploaded successfully!"
+      );
 
-      // Clear the selected file after successful upload
       setSelectedFile(null);
 
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
       console.error(error);
 
       if (error.response) {
-        alert(error.response.data.error || "Upload failed.");
+        toast.error(error.response.data.error || "Upload failed.");
       } else {
-        alert("Server not responding.");
+        toast.error("Server not responding.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,6 +60,7 @@ function Upload() {
       <br />
 
       <input
+        ref={fileInputRef}
         type="file"
         accept=".pdf"
         onChange={handleFileChange}
@@ -61,8 +74,8 @@ function Upload() {
           style={{
             padding: "20px",
             background: "#ffffff",
-            borderRadius: "10px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+            borderRadius: "12px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
             maxWidth: "500px",
           }}
         >
@@ -85,17 +98,19 @@ function Upload() {
 
           <button
             onClick={handleUpload}
+            disabled={loading}
             style={{
               padding: "10px 20px",
-              background: "#2563eb",
+              background: loading ? "#94a3b8" : "#2563eb",
               color: "#fff",
               border: "none",
               borderRadius: "8px",
-              cursor: "pointer",
+              cursor: loading ? "not-allowed" : "pointer",
               fontSize: "16px",
+              transition: "0.3s",
             }}
           >
-            Upload PDF
+            {loading ? "⏳ Uploading..." : "📤 Upload PDF"}
           </button>
         </div>
       )}

@@ -1,23 +1,48 @@
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 function Layout({ children }) {
   return (
-    <div style={{ display: "flex" }}>
+    <div
+      style={{
+        display: "flex",
+        minHeight: "100vh",
+        background: "#f1f5f9",
+      }}
+    >
+      {/* Sidebar */}
       <Sidebar />
 
-      <div style={{ flex: 1 }}>
-        <Navbar />
-
+      {/* Main Content */}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          marginLeft: "300px", 
+        }}
+      >
+        {/* Navbar */}
         <div
+        >
+          <Navbar />
+        </div>
+
+        {/* Page Content */}
+        <main
           style={{
+            flex: 1,
             padding: "30px",
-            background: "#f8fafc",
-            minHeight: "calc(100vh - 70px)"
+            overflowY: "auto",
           }}
         >
           {children}
-        </div>
+        </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );

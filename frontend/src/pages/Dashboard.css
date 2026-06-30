@@ -1,0 +1,102 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Welcome Card */
+.welcome-card {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
+}
+
+.welcome-card h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.welcome-card p {
+    margin-top: 12px;
+    opacity: 0.95;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Statistics Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Recent Documents Section */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+/* Card Section */
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2563eb;
+    font-size: 28px;
+}
+
+/* Recent Document Item */
+.recent-item {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 5px solid #2563eb;
+    transition: all 0.3s ease;
+}
+
+.recent-item:hover {
+    background: #eff6ff;
+    transform: translateX(5px);
+}
+
+.recent-item strong {
+    font-size: 17px;
+    color: #1e293b;
+}
+
+.recent-item small {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* System Status */
+.section p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-card h1 {
+        font-size: 28px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+}
