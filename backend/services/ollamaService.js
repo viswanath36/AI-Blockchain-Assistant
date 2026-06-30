@@ -1,20 +1,21 @@
-const axios = require("axios");
+const { GoogleGenAI } = require("@google/genai");
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
 
 const askLLM = async (prompt) => {
   try {
-    const response = await axios.post(
-      "http://localhost:11434/api/generate",
-      {
-        model: "llama3",
-        prompt: prompt,
-        stream: false
-      }
-    );
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: prompt,
+    });
 
-    return response.data.response;
+    return response.text;
   } catch (error) {
-    console.error("Ollama Error:", error.message);
-    return "Error communicating with AI";
+    console.error("Gemini Error:", error);
+
+    return "Error communicating with AI.";
   }
 };
 
