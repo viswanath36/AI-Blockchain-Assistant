@@ -1,4 +1,4 @@
-const askLLM = require("../services/ollamaService");
+const askLLM = require("../services/geminiService");
 const { getDocumentText } = require("../services/documentStore");
 const Document = require("../models/Document");
 
