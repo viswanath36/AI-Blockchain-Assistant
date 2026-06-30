@@ -47,7 +47,7 @@ function Documents() {
   // View PDF
   const handleView = (id) => {
     window.open(
-      `http://localhost:5000/api/document/view/${id}`,
+      `https://ai-blockchain-assistant.onrender.com/api/document/view/${id}`,
       "_blank"
     );
   };
@@ -55,7 +55,7 @@ function Documents() {
   // Download PDF
   const handleDownload = (id) => {
     window.open(
-      `http://localhost:5000/api/document/download/${id}`,
+      `https://ai-blockchain-assistant.onrender.com/api/document/download/${id}`,
       "_blank"
     );
   };
