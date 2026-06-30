@@ -8,7 +8,9 @@ const { createBlock } = require("../services/blockchainService");
 // Upload PDF and save to MongoDB
 const uploadDocument = async (req, res) => {
   try {
-    const filePath = req.file.path;
+    const path = require("path");
+
+    const filePath = path.resolve(req.file.path);
 
     const dataBuffer = fs.readFileSync(filePath);
 
