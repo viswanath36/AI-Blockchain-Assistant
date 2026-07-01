@@ -145,11 +145,11 @@ npm run dev
 
 Backend (.env)
 
-PORT=
+PORT=5000
 
-MONGO_URI=
+MONGO_URI=mongodb://viswasangaraju_db_user:viswanath9@ac-yynlyc4-shard-00-00.vmbu8we.mongodb.net:27017,ac-yynlyc4-shard-00-01.vmbu8we.mongodb.net:27017,ac-yynlyc4-shard-00-02.vmbu8we.mongodb.net:27017/?ssl=true&replicaSet=atlas-iegv24-shard-0&authSource=admin&appName=AIBlockchainCluster
 
-GEMINI_API_KEY=
+GEMINI_API_KEY=AQ.Ab8RN6K4pL7KZSbM14sAtqyRM3KbGQA7TTFqQxfvoG0CWGghzQ
 
 ---
 
