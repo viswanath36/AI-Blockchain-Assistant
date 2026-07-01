@@ -58,7 +58,12 @@ const viewDocument = async (req, res) => {
       });
     }
 
-    const filePath = path.join(__dirname, "..", document.filepath);
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      document.filepath
+    );
 
     res.sendFile(filePath);
   } catch (error) {
@@ -81,7 +86,12 @@ const downloadDocument = async (req, res) => {
       });
     }
 
-    const filePath = path.join(__dirname, "..", document.filepath);
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      document.filepath
+    );
 
     // Download using the original filename
     res.download(filePath, document.filename);
@@ -107,7 +117,12 @@ const deleteDocument = async (req, res) => {
     }
 
     // Delete file from uploads folder
-    const filePath = path.join(__dirname, "..", document.filepath);
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "uploads",
+      document.filepath
+    );
 
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);

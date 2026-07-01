@@ -55,7 +55,7 @@ const uploadDocument = async (req, res) => {
     // Save in MongoDB
     const savedDocument = await Document.create({
       filename: req.file.originalname,
-      filepath: req.file.path,
+      filepath: req.file.filename,
       content: pdfData.text,
       fileHash,
     });
