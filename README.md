@@ -1,184 +1,319 @@
 # 🤖 AI-Powered Blockchain Document Assistant
 
-> Secure • Transparent • Intelligent Document Management using Artificial Intelligence and Blockchain Technology
+<p align="center">
+  <b>Secure • Intelligent • Blockchain-Verified Document Management</b>
+</p>
+
+<p align="center">
+  An AI-powered document assistant that combines <b>Google Gemini AI</b>, <b>Blockchain-based Verification</b>, and <b>Cloud Technologies</b> to securely upload, analyze, and verify PDF documents.
+</p>
 
 ---
 
-## 🌐 Live Demo
+## 🚀 Live Demo
 
-🔗 Frontend:
+🌐 **Frontend:**  
 https://ai-blockchain-assistant.vercel.app/
 
-🔗 Backend API:
-https://ai-blockchain-assistant.onrender.com
+⚙️ **Backend API:**  
+https://ai-blockchain-assistant.onrender.com/
+
+💻 **GitHub Repository:**  
+https://github.com/viswanath36/AI-Blockchain-Assistant
 
 ---
 
-## 📖 Project Overview
+# 📖 Overview
 
-AI-Powered Blockchain Document Assistant is a full-stack web application that enables users to upload PDF documents, verify their integrity using Blockchain hashing, and interact with documents through Google's Gemini AI.
+AI-Powered Blockchain Document Assistant is a full-stack web application designed to securely manage PDF documents while providing AI-powered document interaction.
 
-The system combines Artificial Intelligence, Blockchain, Cloud Database, and PDF Processing to provide secure and intelligent document management.
+Users can upload PDF documents, ask questions about their content using **Google Gemini AI**, verify document integrity through **SHA-256 hashing and blockchain-inspired verification**, and manage their uploaded documents from an intuitive dashboard.
 
----
-
-## ✨ Features
-
-- 📄 Upload PDF Documents
-- 🤖 Chat with PDF using Google Gemini AI
-- 🔐 SHA-256 File Hash Generation
-- ⛓ Blockchain-based Document Verification
-- 📚 Document Management
-- 👀 View Documents
-- 📥 Download Documents
-- 🗑 Delete Documents
-- ☁ MongoDB Atlas Cloud Database
-- 🌍 Cloud Deployment
-- ⚡ Responsive Dashboard
+This project demonstrates the integration of Artificial Intelligence, Blockchain concepts, Cloud Databases, REST APIs, and Full-Stack Web Development into one practical application.
 
 ---
 
-## 🛠 Tech Stack
+# ✨ Features
 
-### Frontend
+### 📄 Smart PDF Upload
+- Upload PDF documents securely
+- Automatic PDF text extraction
+- Store document metadata in MongoDB Atlas
 
-- React
+### 🤖 AI Document Assistant
+- Chat with uploaded PDFs
+- AI-powered document summarization
+- Context-aware question answering using Google Gemini
+
+### 🔐 Blockchain Verification
+- SHA-256 document hashing
+- Blockchain-inspired verification records
+- File integrity validation
+
+### 📚 Document Management
+- View uploaded PDFs
+- Download original documents
+- Delete documents
+- Search uploaded files
+
+### ☁ Cloud Deployment
+- MongoDB Atlas
+- Render Backend
+- Vercel Frontend
+
+---
+
+# 🖥 Application Workflow
+
+```text
+               User
+
+                 │
+
+                 ▼
+
+      React Frontend (Vercel)
+
+                 │
+
+                 ▼
+
+      Express.js Backend (Render)
+
+        │           │            │
+
+        ▼           ▼            ▼
+
+MongoDB Atlas   Google Gemini   Blockchain
+
+        │
+
+        ▼
+
+  Document Management
+```
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+- React.js
 - Vite
 - Axios
 - React Router
 - React Toastify
 
-### Backend
-
+## Backend
 - Node.js
 - Express.js
 - Multer
 - pdf-parse
 
-### Database
-
+## Database
 - MongoDB Atlas
 - Mongoose
 
-### AI
-
+## Artificial Intelligence
 - Google Gemini API
 
-### Blockchain
-
+## Blockchain
 - SHA-256 Hashing
 - Custom Blockchain Implementation
 
-### Deployment
-
+## Deployment
 - Vercel
 - Render
 - GitHub
 
 ---
 
-## 🏗 System Architecture
+# 📂 Project Structure
 
-User
-
-↓
-
-React Frontend (Vercel)
-
-↓
-
-Express Backend (Render)
-
-↓
-
-MongoDB Atlas
-
-↓
-
-Google Gemini AI
-
-↓
-
-Blockchain Verification
-
----
-
-## 📂 Folder Structure
-
+```text
 AI-Blockchain-Assistant
 
+│
 ├── frontend
-
+│   ├── src
+│   ├── public
+│   └── package.json
+│
 ├── backend
-
-├── uploads
-
+│   ├── config
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── uploads
+│   └── server.js
+│
 └── README.md
+```
 
 ---
 
-## 🚀 Installation
+# 📸 Screenshots
 
-### Clone Repository
+## 🏠 Home Page
 
+(Add Screenshot)
+
+---
+
+## 📊 Dashboard
+
+(Add Screenshot)
+
+---
+
+## 📄 Upload Document
+
+(Add Screenshot)
+
+---
+
+## 🤖 AI Chat
+
+(Add Screenshot)
+
+---
+
+## ⛓ Blockchain Verification
+
+(Add Screenshot)
+
+---
+
+## 📚 Documents
+
+(Add Screenshot)
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
 git clone https://github.com/viswanath36/AI-Blockchain-Assistant.git
+```
 
-### Backend
+---
 
+## Backend
+
+```bash
 cd backend
 
 npm install
 
 npm start
+```
 
-### Frontend
+---
 
+## Frontend
+
+```bash
 cd frontend
 
 npm install
 
 npm run dev
+```
 
 ---
 
-## 🔑 Environment Variables
+# 🔑 Environment Variables
 
-Backend (.env)
+Create a `.env` file inside the **backend** folder.
 
+```env
 PORT=5000
 
-MONGO_URI=mongodb://viswasangaraju_db_user:viswanath9@ac-yynlyc4-shard-00-00.vmbu8we.mongodb.net:27017,ac-yynlyc4-shard-00-01.vmbu8we.mongodb.net:27017,ac-yynlyc4-shard-00-02.vmbu8we.mongodb.net:27017/?ssl=true&replicaSet=atlas-iegv24-shard-0&authSource=admin&appName=AIBlockchainCluster
+MONGO_URI=your_mongodb_connection_string
 
-GEMINI_API_KEY=AQ.Ab8RN6K4pL7KZSbM14sAtqyRM3KbGQA7TTFqQxfvoG0CWGghzQ
+GEMINI_API_KEY=your_gemini_api_key
+```
 
----
-
-
----
-
-## 🔮 Future Enhancements
-
-- User Authentication
-- Cloud Storage (AWS S3 / Cloudinary)
-- OCR Support
-- Multiple File Formats
-- Role-Based Access
-- Audit Logs
+> **Important:** Never commit your actual API keys or database credentials to GitHub.
 
 ---
 
-## 👨‍💻 Author
+# 📌 API Endpoints
 
-Sangaraju Viswanath
+| Method | Endpoint | Description |
+|----------|-----------------------------|------------------------------|
+| POST | `/api/upload` | Upload PDF |
+| GET | `/api/documents` | Get all documents |
+| GET | `/api/document/:id` | Get document details |
+| GET | `/api/document/view/:id` | View PDF |
+| GET | `/api/document/download/:id` | Download PDF |
+| DELETE | `/api/document/:id` | Delete document |
+| POST | `/api/chat/:id` | Chat with document |
+| GET | `/api/blockchain` | View blockchain |
 
-GitHub:
-https://github.com/viswanath36
+---
 
-LinkedIn:
+# 🎯 Key Learning Outcomes
+
+During this project I gained hands-on experience in:
+
+- Full Stack Web Development
+- REST API Development
+- AI Integration with Google Gemini
+- MongoDB Atlas
+- Cloud Deployment
+- Blockchain Fundamentals
+- PDF Processing
+- Git & GitHub
+- Debugging Production Deployments
+- Environment Variable Management
+
+---
+
+# 🔮 Future Improvements
+
+- 🔐 User Authentication (JWT)
+- 👤 User-specific document storage
+- ☁ Cloudinary / AWS S3 integration
+- 📱 Mobile responsive improvements
+- 📊 Analytics Dashboard
+- 📜 Audit Logs
+- 🔍 OCR Support
+- 📁 Multiple File Formats
+
+---
+
+# 👨‍💻 Author
+
+## Sangaraju Viswanath
+
+Aspiring Software Engineer passionate about Full Stack Development, Artificial Intelligence, and Cloud Technologies.
+
+### Connect with me
+
+💼 LinkedIn
+
 https://www.linkedin.com/in/s-viswanath-8b545335b/
 
+💻 GitHub
+
+https://github.com/viswanath36
+
 ---
 
-## ⭐ Support
+# ⭐ If you like this project...
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project interesting or helpful,
+
+⭐ **Please consider giving this repository a star!**
+
+It motivates me to continue building and sharing more projects.
+
+---
+
+<p align="center">
+Made with ❤️ by Sangaraju Viswanath
+</p>
