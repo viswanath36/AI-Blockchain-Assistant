@@ -157,37 +157,38 @@ AI-Blockchain-Assistant
 
 ## 🏠 Home Page
 
-(Add Screenshot)
+<img width="1896" height="970" alt="Screenshot 2026-07-01 182023" src="https://github.com/user-attachments/assets/ce72c06a-a51e-45ce-92a4-e24c6ad25f59" />
 
 ---
 
 ## 📊 Dashboard
 
-(Add Screenshot)
+<img width="1917" height="960" alt="Screenshot 2026-07-01 181911" src="https://github.com/user-attachments/assets/b21d5fbb-6cf4-4297-91d8-19f876645861" />
 
 ---
 
 ## 📄 Upload Document
 
-(Add Screenshot)
+<img width="1917" height="812" alt="Screenshot 2026-07-01 182054" src="https://github.com/user-attachments/assets/94514374-21c9-43b7-9b3c-7cee66284d08" />
 
 ---
 
 ## 🤖 AI Chat
 
-(Add Screenshot)
+<img width="1917" height="967" alt="Screenshot 2026-07-01 183657" src="https://github.com/user-attachments/assets/9c5d5d6f-0cd6-4dc7-bd71-7f69ef5db9b7" />
 
 ---
 
 ## ⛓ Blockchain Verification
 
-(Add Screenshot)
+<img width="1897" height="975" alt="Screenshot 2026-07-01 183726" src="https://github.com/user-attachments/assets/1a3a205b-fed8-4412-9142-d8e8af1aa6aa" />
+<img width="1917" height="970" alt="Screenshot 2026-07-01 183755" src="https://github.com/user-attachments/assets/cb69a08a-eabe-4d76-bd66-40f6c2810146" />
 
 ---
 
 ## 📚 Documents
 
-(Add Screenshot)
+<img width="1917" height="667" alt="Screenshot 2026-07-01 182126" src="https://github.com/user-attachments/assets/f47f964b-31bf-4655-9f66-47a4c82ee486" />
 
 ---
 
